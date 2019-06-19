@@ -1,0 +1,13 @@
+git init
+
+git config --global user.name "AdiBadea"
+
+git config --global user.email "badeaadrianionut@gmail.com"
+
+git add *
+
+git commit -m "mesaj"
+
+git push 
+
+git pull origin master
