@@ -1,10 +1,26 @@
-import time 
+import RPi.GPIO as GPIO
+import time
+
+# Setam modul de numerotare al pinilor
+GPIO.setmode(GPIO.BOARD)
+
+# Setam ca pin-ul 7 sa emita curent
+GPIO.setup(7, GPIO.OUT)
 
 
-for x in range(0, 3):
-    print("Motor On")
-    time.sleep(1)
-    print("Motor Off")
-    time.sleep(1)
+for repetitions in range(0, 30):
     
-# De continuat cu LED-uri
+    GPIO.output(7, True)
+    # Pornim pin-ul
+    
+    time.sleep(1)
+    # Stam o secunda
+    
+    GPIO.output(7, False)
+    # Oprim pin-ul
+    
+    time.sleep(1)
+    # Stam o secunda
+    
+GPIO.cleanup()
+# Curatam configuratiile date mai sus
