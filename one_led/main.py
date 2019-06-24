@@ -6,20 +6,23 @@ GPIO.setmode(GPIO.BOARD)
 
 # Setam ca pin-ul 7 sa emita curent
 GPIO.setup(7, GPIO.OUT)
+GPIO.setup(8, GPIO.OUT)
+GPIO.setup(10, GPIO.OUT)
 
 
-for repetitions in range(0, 30):
+for repetitions in range(0, 100):
     
     GPIO.output(7, True)
+  
     # Pornim pin-ul
     
-    time.sleep(1)
+    time.sleep(0.1)
     # Stam o secunda
     
     GPIO.output(7, False)
     # Oprim pin-ul
     
-    time.sleep(1)
+    time.sleep(0.1)
     # Stam o secunda
     
 GPIO.cleanup()
