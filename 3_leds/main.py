@@ -10,24 +10,18 @@ GPIO.setup(8, GPIO.OUT)
 GPIO.setup(10, GPIO.OUT)
 
 
-for repetitions in range(0, 100):
+for repetitions in range(0, 20):
     
-    GPIO.output(7, True)
-    GPIO.output(8, True)
-    GPIO.output(10, True)
-    # Pornim pin-ul
-    
-    time.sleep(0.1)
-    # Stam o secunda
-    
-    GPIO.output(7, False)
-    GPIO.output(8, False)
     GPIO.output(10, False)
-    # Oprim pin-ul
-    
-    time.sleep(0.1)
-    # Stam o secunda
+    GPIO.output(7, True)
+    time.sleep(3)
+
+    GPIO.output(8, True)
+    GPIO.output(7, False)
+    time.sleep(3)
+
+    GPIO.output(10, True)
+    GPIO.output(8, False)
+    time.sleep(3)    
     
 GPIO.cleanup()
-# Curatam configuratiile date mai sus
-
