@@ -19,13 +19,12 @@ def intrabaLed():
         print("Ce bec doresti sa aprinzi?")
         print("1 - Verde | 2 - Galben | 3 - Rosu")
         becDeAprins = input()
-        print(type(becDeAprins))
         if becDeAprins in numereLeduri:
             clear() 
             return becDeAprins
         else:
-            print("Bec invalid, becurile disponibile sunt 1, 2 sau 3")
-            return "eroare"
+            # print("Bec invalid, becurile disponibile sunt 1, 2 sau 3")
+            raise ValueError("Bec invalid, becurile disponibile sunt 1, 2 sau 3")
            
 
 def intrabaSecunde():
@@ -36,9 +35,17 @@ def intrabaSecunde():
 
 class AprindeBec:
     def __init__(self):
-        if intrabaLed() != "eroare":
-            print(intrabaLed())
-            print(intrabaSecunde())
+        while True:
+            try:
+                intrabaLed()
+            except BaseException as errorMessage:
+                print (errorMessage)
+                print("-------------------------------------------------------------------------")
+
+                # break
+        # if intrabaLed() != "eroare":
+        #     print(intrabaLed())
+        #     print(intrabaSecunde())
 
 AprindeBec()
 
