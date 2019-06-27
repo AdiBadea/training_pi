@@ -30,14 +30,18 @@ def intrabaLed():
 def intrabaSecunde():
         print("Pentru cate secunde ?")
         secundeDeAprins = input()
-        clear() 
-        return str(secundeDeAprins)        
+        print(type(secundeDeAprins))
+        if isinstance(int(secundeDeAprins, 10), int) == True:
+            print("Am ghicit")
+        # clear() 
+        return secundeDeAprins      
 
 class AprindeBec:
     def __init__(self):
         while True:
             try:
                 intrabaLed()
+                intrabaSecunde()
             except BaseException as errorMessage:
                 print (errorMessage)
                 print("-------------------------------------------------------------------------")
