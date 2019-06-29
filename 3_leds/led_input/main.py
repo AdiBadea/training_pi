@@ -1,9 +1,13 @@
 # import only system from os 
 from os import system, name 
 # import sleep to show output for some time period 
-from time import sleep 
+import time
 
-numereLeduri = ["1", "2", "3"]
+# GPIO.setup(7, GPIO.OUT)  # verde  - 1 
+# GPIO.setup(8, GPIO.OUT)  # galben - 2
+# GPIO.setup(10, GPIO.OUT) # rosu   - 3
+
+numereLeduri  = ["1", "2", "3"]
 
 def clear(): 
   
@@ -23,7 +27,7 @@ def intrabaLed():
             raise ValueError("Bec invalid, becurile disponibile sunt 1, 2 sau 3")
         else:
             clear() 
-            return becDeAprins
+            return int(becDeAprins, 10)
            
 
 def intrabaSecunde():
@@ -36,13 +40,30 @@ def intrabaSecunde():
             raise ValueError("Maximul de secunde pentru care poti aprinde un bec este de 30")
         else:
             clear() 
-            return secundeDeAprins      
+            return int(secundeDeAprins, 10) 
+
+def aprindeBec(bec, secunde):
+    print("Se va aprinde becul:", bec, "pentru", secunde, "secunde")
+    if bec == 1:
+        print("becul verde aprins")
+        time.sleep(secunde)    
+        print("becul verde stins")
+    elif bec == 2:
+        print("becul galben aprins")
+        time.sleep(secunde)  
+        print("becul galben stins")
+    elif bec == 3:
+        print("becul rosu aprins")
+        time.sleep(secunde)    
+        print("becul galben stins")
+
 
 class Main:
     def __init__(self):
         while True:
             try:
-                print("Se va aprinde becul:", intrabaLed(), "pentru", intrabaSecunde(), "secunde")
+                # print("Se va aprinde becul:", intrabaLed(), "pentru", intrabaSecunde(), "secunde")
+                aprindeBec(intrabaLed(), intrabaSecunde())
                 break
             except BaseException as errorMessage:
                 clear()
@@ -51,9 +72,7 @@ class Main:
 
 Main()
 
-# GPIO.setup(7, GPIO.OUT) - verde - 1 
-# GPIO.setup(8, GPIO.OUT) - galben - 2
-# GPIO.setup(10, GPIO.OUT) - rosu - 3
+
 
     
 
