@@ -3,9 +3,9 @@ from os import system, name
 # import sleep to show output for some time period 
 import time
 
-# GPIO.setup(7, GPIO.OUT)  # verde  - 1 
-# GPIO.setup(8, GPIO.OUT)  # galben - 2
-# GPIO.setup(10, GPIO.OUT) # rosu   - 3
+GPIO.setup(7, GPIO.OUT)  # verde  - 1 
+GPIO.setup(8, GPIO.OUT)  # galben - 2
+GPIO.setup(10, GPIO.OUT) # rosu   - 3
 
 numereLeduri  = ["1", "2", "3"]
 
@@ -51,24 +51,24 @@ def aprindeBec(bec, secunde):
     print("Se va aprinde becul:", bec, "pentru", secunde, "secunde")
     if bec == 1:
         delay(1)    
-        # GPIO.output(7, True)
+        GPIO.output(7, True)
         print("becul verde aprins")
         delay(secunde)  
-        # GPIO.output(7, False)
+        GPIO.output(7, False)
         print("becul verde stins")
     elif bec == 2:
         delay(1)    
-        # GPIO.output(8, True)
+        GPIO.output(8, True)
         print("becul galben aprins")
         delay(secunde)  
-        # GPIO.output(8, False)
+        GPIO.output(8, False)
         print("becul galben stins")
     elif bec == 3:
         delay(1)   
-        # GPIO.output(10, True)
+        GPIO.output(10, True)
         print("becul rosu aprins")
         delay(secunde)   
-        # GPIO.output(10, False)
+        GPIO.output(10, False)
         print("becul galben stins")
 
 class Main:
