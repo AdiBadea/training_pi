@@ -10,11 +10,9 @@ import time
 numereLeduri  = ["1", "2", "3"]
 
 def clear(): 
-  
     # for windows 
     if name == 'nt': 
         _ = system('cls') 
-  
     # for mac and linux(here, os.name is 'posix') 
     else: 
         _ = system('clear') 
@@ -27,8 +25,7 @@ def intrabaLed():
             raise ValueError("Bec invalid, becurile disponibile sunt 1, 2 sau 3")
         else:
             clear() 
-            return int(becDeAprins, 10)
-           
+            return int(becDeAprins, 10)          
 
 def intrabaSecunde():
         print("Pentru cate secunde ?")
@@ -54,26 +51,30 @@ def aprindeBec(bec, secunde):
     print("Se va aprinde becul:", bec, "pentru", secunde, "secunde")
     if bec == 1:
         delay(1)    
+        # GPIO.output(7, True)
         print("becul verde aprins")
-        delay(secunde)    
+        delay(secunde)  
+        # GPIO.output(7, False)
         print("becul verde stins")
     elif bec == 2:
         delay(1)    
+        # GPIO.output(8, True)
         print("becul galben aprins")
         delay(secunde)  
+        # GPIO.output(8, False)
         print("becul galben stins")
     elif bec == 3:
-        delay(1)    
+        delay(1)   
+        # GPIO.output(10, True)
         print("becul rosu aprins")
-        delay(secunde)    
+        delay(secunde)   
+        # GPIO.output(10, False)
         print("becul galben stins")
-
 
 class Main:
     def __init__(self):
         while True:
             try:
-                # print("Se va aprinde becul:", intrabaLed(), "pentru", intrabaSecunde(), "secunde")
                 aprindeBec(intrabaLed(), intrabaSecunde())
                 break
             except BaseException as errorMessage:
