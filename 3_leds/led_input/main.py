@@ -42,6 +42,14 @@ def intrabaSecunde():
             clear() 
             return int(secundeDeAprins, 10) 
 
+def delay(secunde):
+  countdown = secunde
+  while countdown > 0:
+    print(countdown)
+    countdown -= 1
+    time.sleep(1)
+    clear()
+
 def aprindeBec(bec, secunde):
     print("Se va aprinde becul:", bec, "pentru", secunde, "secunde")
     if bec == 1:
