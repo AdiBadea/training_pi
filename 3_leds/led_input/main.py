@@ -19,30 +19,35 @@ def intrabaLed():
         print("Ce bec doresti sa aprinzi?")
         print("1 - Verde | 2 - Galben | 3 - Rosu")
         becDeAprins = input()
-        if becDeAprins in numereLeduri:
+        if becDeAprins not in numereLeduri:
+            raise ValueError("Bec invalid, becurile disponibile sunt 1, 2 sau 3")
+        else:
             clear() 
             return becDeAprins
-        else:
-            # print("Bec invalid, becurile disponibile sunt 1, 2 sau 3")
-            raise ValueError("Bec invalid, becurile disponibile sunt 1, 2 sau 3")
            
 
 def intrabaSecunde():
         print("Pentru cate secunde ?")
         secundeDeAprins = input()
         print(type(secundeDeAprins))
-        if isinstance(int(secundeDeAprins, 10), int) == True:
-            print("Am ghicit")
-        # clear() 
-        return secundeDeAprins      
+        if isinstance(int(secundeDeAprins, 10), int) == False:
+            raise ValueError("Valoarea introdusa nu este un numar")
+        elif int(secundeDeAprins, 10) > 30:
+            raise ValueError("Maximul de secunde pentru care poti aprinde un bec este de 30")
+        else:
+            clear() 
+            return secundeDeAprins      
 
 class AprindeBec:
     def __init__(self):
         while True:
             try:
-                intrabaLed()
-                intrabaSecunde()
+                # intrabaLed()
+                # intrabaSecunde()
+                print("Se va aprinde becul:", intrabaLed(), "pentru", intrabaSecunde(), "secunde")
+                break
             except BaseException as errorMessage:
+                clear()
                 print (errorMessage)
                 print("-------------------------------------------------------------------------")
 
