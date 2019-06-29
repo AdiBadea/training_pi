@@ -53,16 +53,19 @@ def delay(secunde):
 def aprindeBec(bec, secunde):
     print("Se va aprinde becul:", bec, "pentru", secunde, "secunde")
     if bec == 1:
+        delay(1)    
         print("becul verde aprins")
-        time.sleep(secunde)    
+        delay(secunde)    
         print("becul verde stins")
     elif bec == 2:
+        delay(1)    
         print("becul galben aprins")
-        time.sleep(secunde)  
+        delay(secunde)  
         print("becul galben stins")
     elif bec == 3:
+        delay(1)    
         print("becul rosu aprins")
-        time.sleep(secunde)    
+        delay(secunde)    
         print("becul galben stins")
 
 
