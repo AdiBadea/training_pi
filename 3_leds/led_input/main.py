@@ -38,12 +38,10 @@ def intrabaSecunde():
             clear() 
             return secundeDeAprins      
 
-class AprindeBec:
+class Main:
     def __init__(self):
         while True:
             try:
-                # intrabaLed()
-                # intrabaSecunde()
                 print("Se va aprinde becul:", intrabaLed(), "pentru", intrabaSecunde(), "secunde")
                 break
             except BaseException as errorMessage:
@@ -51,22 +49,11 @@ class AprindeBec:
                 print (errorMessage)
                 print("-------------------------------------------------------------------------")
 
-                # break
-        # if intrabaLed() != "eroare":
-        #     print(intrabaLed())
-        #     print(intrabaSecunde())
+Main()
 
-AprindeBec()
-
-
-
-# class Person:
-#   def __init__(self, name, age):
-#     self.name = name
-#     self.age = age
-
-
-
+# GPIO.setup(7, GPIO.OUT) - verde - 1 
+# GPIO.setup(8, GPIO.OUT) - galben - 2
+# GPIO.setup(10, GPIO.OUT) - rosu - 3
 
     
 
