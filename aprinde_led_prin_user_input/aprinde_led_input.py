@@ -56,6 +56,7 @@ def aprindeBec(bec, secunde):
         delay(secunde)  
         GPIO.output(7, False)
         print("becul verde stins")
+        GPIO.cleanup()
     elif bec == 2:
         delay(1)    
         GPIO.output(8, True)
@@ -63,6 +64,7 @@ def aprindeBec(bec, secunde):
         delay(secunde)  
         GPIO.output(8, False)
         print("becul galben stins")
+        GPIO.cleanup()
     elif bec == 3:
         delay(1)   
         GPIO.output(10, True)
@@ -70,6 +72,7 @@ def aprindeBec(bec, secunde):
         delay(secunde)   
         GPIO.output(10, False)
         print("becul galben stins")
+        GPIO.cleanup()
 
 class Main:
     def __init__(self):
