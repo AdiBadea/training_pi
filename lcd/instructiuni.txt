@@ -1,0 +1,77 @@
+Placa LCD Hat pentru Raspberry Pi include un ecran LCD alfanumeric cu 16 linii și 2 coloane, un LED RGB, trimmer pentru ajustarea contrastului și tastatură.
+Această placă dispune de interfață I2C, fiind bazată pe circuitul integrat MCP3017, un cip de expansiune I/O care permite controlul LCD-ului cu doar 2 pini de la Raspberry Pi.
+
+Specificații
+LCD aflanumeric cu 16 linii și 2 coloane
+LED RGB integrat
+Trimmer pentru ajustarea contrastului
+Tastatură
+Interfață I2C
+Instrucțiuni de utilizare
+Pentru acest LCD vă recomandăm să utilizați sistemul de operare Raspibian.
+
+Mai întai actualizăm pachetele:
+
+sudo apt-get update
+sudo apt-get upgrade
+
+Instalăm git:
+
+sudo apt-get install git-core
+
+Downloadăm Wiring Pi:
+
+git clone git://git.drogon.net/wiringPi
+
+Compilăm Wiring Pi:
+
+cd wiringPi
+./build
+
+Activăm interfața I2C din meniul advanced options al programului raspi-config:
+
+sudo raspi-config
+
+Acum placa trebuie resetată pentru a porni cu I2C activat. După restart incărcam driverul pentru I2C și scanăm magistrala I2C:
+
+sudo modprobe i2c-dev
+sudo i2cdetect -y -a 1
+
+Acum trebuie sa apară un dispozitiv identificat pe I2C la adresa 0x20.
+
+Pentru a testa LCD-ul, scriem codul următor în fișierul lcd1602.c:
+
+#include <stdio.h>                                                                        
+#include <wiringPi.h>                                                             
+#include <mcp23017.h>
+#include <lcd.h>
+ 
+int main()
+{
+        int display,i,count;
+        wiringPiSetup();
+        mcp23017Setup (100, 0x20);
+        printf ("Raspberry Pi - MCP23017 Testn");
+        for(i=0;i<16;i++)
+          pinMode(100+i,OUTPUT);
+        digitalWrite(114,0);
+        display=lcdInit(2,16,4,115,113,112,111,110,109,0,0,0,0);
+        lcdHome(display);
+        lcdClear(display);
+        lcdPosition(display,0,0);
+        lcdPuts(display,"Hello World");
+        while(1)
+        {
+                lcdPosition(display,0,1);                                                                                       
+                lcdPrintf(display,"%d",count++);
+                delay(300);
+                printf("lcd1602n");
+        }
+}
+Compilăm programul:
+
+gcc lcd1602.c /home/pi/wiringPi/devLib/lcd.o -lwiringPi -o lcd1602
+
+Rulăm programul și ar trebui să vedem un text pe ecran:
+
+./lcd1602
