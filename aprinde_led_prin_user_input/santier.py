@@ -25,11 +25,10 @@ def prelucreazaPattern(pattern):
 
     patternArray = []
 
-    # i = len(pattern)
-    i = 4
+    i = len(pattern)
     while i != 0:
       log("I este", i)
-      i -= i
+      i -= 1
 
 
 prelucreazaPattern(intreabaPattern())
