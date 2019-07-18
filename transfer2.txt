@@ -1,3 +1,39 @@
+Python Usage
+It's easy to use the I2C 16x2 RGB LCD Pi plate with Python and the Adafruit CircuitPython
+CharLCD (https://adafru.it/C47) library. This library allows you to easily write Python code that controls the RGB
+character LCD.
+Assemble the plate as shown in the previous pages and attach to your Pi.
+Python Installation of CharLCD Library
+You'll need to install the Adafruit_Blinka library that provides the CircuitPython support in Python. This will also require
+enabling I2C on your Raspberry Pi and verifying you are running Python 3.
+Once that's done, from your command line run the following command:
+sudo pip3 install adafruit-circuitpython-charlcd
+If your default Python is version 3 you may need to run 'pip' instead. Just make sure you aren't trying to use
+CircuitPython on Python 2.x, it isn't supported!
+Python Code
+To demonstrate the usage of the character LCD we'll initialize it and display text using CircuitPython code.
+First, you'll need to import necessary modules, initialize the I2C bus, and create an instance of the character LCD class.
+Paste the following code into your REPL:
+Now you're ready to start writing text and characters on the display! The usage of the LCD class is exactly the same as
+shown in the parallel LCD wiring guide (https://adafru.it/CVQ). Be sure to check out that guide (https://adafru.it/CVQ)
+for a complete discussion of LCD usage.
+As a quick test though you can run the following code to use the color property to set the backlight to red and the
+message property to write text to the display:
+You'll need to set up your Raspberry PI to work with I2C before this will work! Check out the CircuitPython on
+Raspberry Pi guide for details: https://learn.adafruit.com/circuitpython-on-raspberrypi-linux
+import board
+import busio
+import adafruit_character_lcd.character_lcd_rgb_i2c as character_lcd
+lcd_columns = 16
+lcd_rows = 2
+i2c = busio.I2C(board.SCL, board.SDA)
+lcd = character_lcd.Character_LCD_RGB_I2C(i2c, lcd_columns, lcd_rows)
+lcd.color = [100, 0, 0]
+lcd.message = "Hello\nCircuitPython"
+
+
+
+
 If you don't see anything, adjust the potentiometer on the plate until the message shows up. The potentiometer is
 located below the LCD on the side opposite the buttons.
 That's all there is to using the RGB character LCD Pi Plate with Python and the Adafruit CircuitPython CharLCD library!
