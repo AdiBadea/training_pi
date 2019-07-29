@@ -1,8 +1,6 @@
 import csv
 import matplotlib.pyplot as plt
-
-# data = {'apples': 10, 'oranges': 15, 'lemons': 5, 'limes': 20}
-
+import numpy as np
 
 realData = {}
 
@@ -33,13 +31,9 @@ while i < len(dates):
     realData[dates[i]] = income[i]
     i += 1
 
-incomes = list(realData.keys())
-dates2 = list(realData.values())
+xCoords = list(realData.keys())
+yCoords = list(map(int,realData.values()))
 
-# fig, axs = plt.subplots(1, 3, figsize=(9, 3), sharey=True)
-plt.plot(incomes, dates2)
-# fig.suptitle('Categorical Plotting')
+plt.plot(xCoords, yCoords)
 
 plt.show()
-
-# print(realData)
