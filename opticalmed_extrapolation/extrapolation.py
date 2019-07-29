@@ -33,4 +33,13 @@ while i < len(dates):
     realData[dates[i]] = income[i]
     i += 1
 
-print(realData)
+incomes = list(realData.keys())
+dates2 = list(realData.values())
+
+# fig, axs = plt.subplots(1, 3, figsize=(9, 3), sharey=True)
+plt.plot(incomes, dates2)
+# fig.suptitle('Categorical Plotting')
+
+plt.show()
+
+# print(realData)
