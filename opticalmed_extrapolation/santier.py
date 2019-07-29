@@ -1,13 +1,13 @@
-import csv
+import matplotlib.pyplot as plt
 
-with open('C:/Users/AdrianBadea/Projects/training_pi/opticalmed_extrapolation/test.csv') as csv_file:
-    csv_reader = csv.reader(csv_file, delimiter=',')
-    line_count = 0
-    for row in csv_reader:
-        if line_count == 0:
-            print(f'Column names are {", ".join(row)}')
-            line_count += 1
-        else:
-            print(f'\t{row[0]} works in the {row[1]} department, and was born in {row[2]}.')
-            line_count += 1
-    print(f'Processed {line_count} lines.')
+data = {'apples': 10, 'oranges': 15, 'lemons': 5, 'limes': 20}
+names = list(data.keys())
+values = list(data.values())
+
+fig, axs = plt.subplots(1, 3, figsize=(9, 3), sharey=True)
+axs[0].bar(names, values)
+axs[1].scatter(names, values)
+axs[2].plot(names, values)
+fig.suptitle('Categorical Plotting')
+
+plt.show()

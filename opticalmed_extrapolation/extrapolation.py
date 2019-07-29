@@ -1,11 +1,18 @@
 import csv
+import matplotlib.pyplot as plt
+
+# data = {'apples': 10, 'oranges': 15, 'lemons': 5, 'limes': 20}
+
+
+realData = {}
+
 
 data = []
 
 income = []
 dates = []
 
-with open('C:/Users/AdrianBadea/Projects/training_pi/opticalmed_extrapolation/data.csv') as csvFile:
+with open('C:/Users/Roberta/Documents/Adrian/Proiecte/training_pi/opticalmed_extrapolation/data.csv') as csvFile:
     
     rawData = csv.reader(csvFile, delimiter=',')
     rowCount = 0
@@ -18,5 +25,12 @@ with open('C:/Users/AdrianBadea/Projects/training_pi/opticalmed_extrapolation/da
     for row in data:
         dates.append(row[0])
         income.append(row[1])
-    print(income)
-    print(dates)
+    # print(income)
+    # print(dates)
+
+i = 0
+while i < len(dates):
+    realData[dates[i]] = income[i]
+    i += 1
+
+print(realData)
