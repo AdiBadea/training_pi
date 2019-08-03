@@ -1,4 +1,5 @@
 import csv
+csv.register_dialect('csvConfig', quoting=csv.QUOTE_ALL,  skipinitialspace=True)
 
 writeData =[
     ["Data", "Venit (pe zi)"],
@@ -12,15 +13,9 @@ class writeOutput:
         self.writeFile(outputData)
 
     def writeFile(self, data):
-
-        self.csv.register_dialect(
-            'csvConfig',
-            quoting=csv.QUOTE_ALL,  
-            skipinitialspace=True
-        )
-        self.writer = csv.writer(f, dialect='csvConfig')
-
-        for row in self.outputData:
-            print(row)
+        with open('write.csv', 'w', newline='') as f:
+            self.writer = csv.writer(f, dialect='csvConfig')
+            for row in self.outputData:
+                print(row)
 
 writeOutput(writeData)
