@@ -20,7 +20,6 @@ class GetData():
                 rowIndex += 1
             del data[0]
 
-        print(data)
-
-GetData('C:/Proiecte/training_pi/opticalmed_extrapolation/data.csv')
+        # print(data)
+        return data
 
