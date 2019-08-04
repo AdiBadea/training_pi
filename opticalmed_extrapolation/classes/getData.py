@@ -3,23 +3,27 @@ import csv
 
 class GetData():
     def __init__(self, filePath):
+    
+        self.data = self.readFile(filePath)
 
-        self.readFile(filePath)
+    def __repr__(self):
+
+        return self.data
+
 
     def readFile(self, filePath):
 
-        data = []
+        container = []
 
         with open(filePath) as csvFile:
 
             rawData = csv.reader(csvFile, delimiter=',')
             rowIndex = 0
-
+    
             for row in rawData:
-                data.append([row[0], row[1]])
+                container.append([row[0], row[1]])
                 rowIndex += 1
-            del data[0]
+            del container[0]
 
-        # print(data)
-        return data
+        return container
 
