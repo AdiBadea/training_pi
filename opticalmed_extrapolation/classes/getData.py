@@ -12,17 +12,15 @@ class GetData():
 
         with open(filePath) as csvFile:
 
-            print(csvFile)
-
             rawData = csv.reader(csvFile, delimiter=',')
             rowIndex = 0
 
             for row in rawData:
                 data.append([row[0], row[1]])
                 rowIndex += 1
-                del data[0]
+            del data[0]
 
-            print(data)
+        print(data)
 
 GetData('C:/Proiecte/training_pi/opticalmed_extrapolation/data.csv')
 
