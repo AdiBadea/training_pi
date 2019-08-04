@@ -1,7 +1,7 @@
 class TestClass:
-    def __init__(self):
+    def __repr__(self):
 
-        self.functieTest()
+        return self.functieTest()
 
     def functieTest(self):
         data = "Banane"
