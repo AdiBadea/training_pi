@@ -3,7 +3,7 @@ import time
 
 # Setam modul de numerotare al pinilor
 GPIO.setmode(GPIO.BOARD)
-GPIO.setwarnings(False)
+# GPIO.setwarnings(False)
 
     
 #GPIO.output(13, False)
