@@ -3,9 +3,21 @@ import time
 
 # Setam modul de numerotare al pinilor
 GPIO.setmode(GPIO.BOARD)
+GPIO.setwarnings(False)
+
+    
+#GPIO.output(13, False)
+#GPIO.output(11, False)
+#GPIO.output(15, False)
+#GPIO.output(19, False)
+    # Oprim pin-ul
+    
+  
+    
+#GPIO.cleanup()
 
 # Setam ca pin-ul 7 sa emita curent
-GPIO.setup(7, GPIO.OUT)
+GPIO.setup(13, GPIO.OUT)
 GPIO.setup(11, GPIO.OUT)
 GPIO.setup(15, GPIO.OUT)
 GPIO.setup(19, GPIO.OUT)
