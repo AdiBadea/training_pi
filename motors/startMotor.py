@@ -7,6 +7,8 @@ GPIO.setmode(GPIO.BOARD)
 # Setam ca pin-ul 7 sa emita curent
 GPIO.setup(7, GPIO.OUT)
 GPIO.setup(11, GPIO.OUT)
+GPIO.setup(15, GPIO.OUT)
+GPIO.setup(19, GPIO.OUT)
 
 for repetitions in range(0, 5):
     
