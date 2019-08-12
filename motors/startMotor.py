@@ -12,6 +12,8 @@ for repetitions in range(0, 5):
     
     GPIO.output(13, True)
     GPIO.output(11, True)
+    GPIO.output(15, True)
+    GPIO.output(19, True)
   
     # Pornim pin-ul
     
@@ -20,6 +22,8 @@ for repetitions in range(0, 5):
     
     GPIO.output(13, False)
     GPIO.output(11, False)
+    GPIO.output(15, False)
+    GPIO.output(19, False)
     # Oprim pin-ul
     
     time.sleep(1)
