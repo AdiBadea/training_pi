@@ -1,4 +1,1 @@
-
-
-
-print(”test de pe telefon”)
+print("test de pe telefon")
