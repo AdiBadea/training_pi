@@ -1,10 +1,9 @@
 import csv        
 
-def getData():
-  with open('data.csv') as csv_file:
-    csv_reader = csv.reader(csv_file, delimiter=',')
-    line_count = 0
-    for row in csv_reader:
+def getData(inputFile):
+  with open(inputFile) as fileData:
+    csvReader = csv.reader(fileData, delimiter=',')
+    for row in csvReader:
       print(row)
      
-getData()
+getData("data.csv")
