@@ -3,11 +3,16 @@ import csv
 # Functions ---
 
 def getData(inputFile):
+  
+  data = []
+  
   with open(inputFile) as fileData:
     csvReader = csv.reader(fileData, delimiter=',')
     for row in csvReader:
-      print(row)
+      data.append(row)
+    del data[0]
+  return data
 
 # Main program ---
 
-getData("data.csv")
+print(getData("data.csv"))
