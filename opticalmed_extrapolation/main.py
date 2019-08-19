@@ -1,11 +1,11 @@
-import csv        
+import csv
 
 # Functions ---
 
 def getData(inputFile):
-  
+
   data = []
-  
+
   with open(inputFile) as fileData:
     csvReader = csv.reader(fileData, delimiter=',')
     for row in csvReader:
@@ -13,6 +13,23 @@ def getData(inputFile):
     del data[0]
   return data
 
+def getYearSpan(input):
+    years = []
+    for date in input:
+        years.append(date[0][6:10])
+    yearSpan = list (set (years))
+    return yearSpan
+
 # Main program ---
 
-print(getData("data.csv"))
+data = getData("data.csv")
+yearSpan = getYearSpan(data)
+
+#test = "01.01.2017"
+
+#print(test[6])
+
+print(yearSpan)
+
+
+# print(data[2][0])
