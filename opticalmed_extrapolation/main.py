@@ -30,6 +30,14 @@ yearSpan = getYearSpan(data)
 #print(test[6])
 
 print(yearSpan)
+print(data)
 
+print(data[0][0][0:5])
 
-# print(data[2][0])
+# [
+#     {"zi": "01.01", "sume": [1000, 500, 700]}
+# ]
+
+#np.unique - ptr a obtine zilele
+#dupa ce a mzilele, ma duc iara pe dates
+#
