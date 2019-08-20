@@ -1,9 +1,3 @@
-import csv        
+import numpy as np
 
-def getData(inputFile):
-  with open(inputFile) as fileData:
-    csvReader = csv.reader(fileData, delimiter=',')
-    for row in csvReader:
-      print(row)
-     
-getData("data.csv")
+print(np.version.version)
