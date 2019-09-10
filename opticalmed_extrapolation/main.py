@@ -67,9 +67,21 @@ def addYearToDates(nextYearIncome, year):
     for dataPerDay in nextYearIncome:
         dataPerDay["day"] = dataPerDay["day"] + "." + str(year) 
         nextYearData.append(dataPerDay)
-    print(nextYearData)
     return nextYearData
-    
+
+def writeData(dataForYear, year):
+    with open( str(year) + "_estimare_venit.csv", mode="w", newline='') as csv_file:
+        fieldnames = ["Data", "Venit (pe zi)"]
+        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+
+        writer.writeheader()
+        for dataRow in dataForYear:
+            dataRow["Data"] = dataRow.pop("day")
+            dataRow["Venit (pe zi)"] = dataRow.pop("income")
+            print(dataRow)
+            writer.writerow(dataRow)
+
+
 # Main program ---
 
 data = getData("data.csv")
@@ -77,3 +89,4 @@ nextYear = findLastYear(data) + 1
 incomeHistory = buildDictionary(data)
 nextYearIncome = calculateNextYearIncome(incomeHistory)
 nextYearData = addYearToDates(nextYearIncome, nextYear)
+writeData(nextYearData, nextYear)
