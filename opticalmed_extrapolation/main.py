@@ -14,12 +14,17 @@ def getData(inputFile):
     del data[0]
   return data
 
-def getYearSpan(input):
-    years = []
+def stringToInt(string):
+    return int(string)
+
+def findNextYear(input):
+    yearContainer = []
     for date in input:
-        years.append(date[0][6:10])
-    yearSpan = list (set (years))
-    return yearSpan
+        yearContainer.append(date[0][6:10])
+    years = list (set(yearContainer))
+    years = list (map(stringToInt, years))
+    lastYear = max(years)
+    return lastYear
 
 def buildDictionary(input):
 
@@ -37,7 +42,7 @@ def buildDictionary(input):
         for inputDate in input:
             if inputDate[0][0:5] == date["day"]:
                 date["incomes"].append(inputDate[1])
-    print(dictionary)
+    # print(dictionary)
     return dictionary
 
 
@@ -45,7 +50,7 @@ def buildDictionary(input):
 # Main program ---
 
 data = getData("data.csv")
-yearSpan = getYearSpan(data)
+lastYear = findNextYear(data)
 # dictionary = buildDictionary(data)
 
 #test = "01.01.2017"
