@@ -3,6 +3,9 @@ import numpy as np
 
 # Functions ---
 
+def stringToInt(string):
+    return int(string)
+
 def getData(inputFile):
 
   data = []
@@ -14,10 +17,25 @@ def getData(inputFile):
     del data[0]
   return data
 
-def stringToInt(string):
-    return int(string)
+def buildDictionary(input):
 
-def findNextYear(input):
+    days = []
+    incomeHistory = []
+
+    for daysAndIncome in input:
+        days.append(daysAndIncome[0][0:5])
+    days = np.unique(days)
+
+    for day in days:
+        incomeHistory.append({"day": day, "incomes": []})
+
+    for date in incomeHistory:
+        for inputDate in input:
+            if inputDate[0][0:5] == date["day"]:
+                date["incomes"].append(inputDate[1])
+    return incomeHistory
+
+def findLastYear(input):
     yearContainer = []
     for date in input:
         yearContainer.append(date[0][6:10])
@@ -26,42 +44,21 @@ def findNextYear(input):
     lastYear = max(years)
     return lastYear
 
-def buildDictionary(input):
-
-    days = []
-    dictionary = []
-
-    for daysAndIncome in input:
-        days.append(daysAndIncome[0][0:5])
-    days = np.unique(days)
-
-    for day in days:
-        dictionary.append({"day": day, "incomes": []})
-
-    for date in dictionary:
-        for inputDate in input:
-            if inputDate[0][0:5] == date["day"]:
-                date["incomes"].append(inputDate[1])
-    # print(dictionary)
-    return dictionary
-
+def calculateNextYearIncome(incomeHistory):
+    # print(incomeHistory[0]["incomes"])
+    for dayIncomes in incomeHistory:
+        print(dayIncomes["incomes"])
+    return incomeHistory
+    # return nextYearIncome
 
 
 # Main program ---
 
 data = getData("data.csv")
-lastYear = findNextYear(data)
-# dictionary = buildDictionary(data)
+nextYear = findLastYear(data) + 1
+incomeHistory = buildDictionary(data)
+nextYearIncome = calculateNextYearIncome(incomeHistory)
 
-#test = "01.01.2017"
-
-#print(test[6])
-
-# print(yearSpan)
-# print(data)
-
-# print(data[0][0][0:5])
-buildDictionary(data)
 
 # [
 #     {"zi": "01.01", "sume": [1000, 500, 700]}
