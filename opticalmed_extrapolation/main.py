@@ -45,11 +45,14 @@ def findLastYear(input):
     return lastYear
 
 def calculateNextYearIncome(incomeHistory):
-    # print(incomeHistory[0]["incomes"])
     for dayIncomes in incomeHistory:
         incomes = dayIncomes["incomes"]
         incomes = list (map(stringToInt, incomes))
-        print(incomes)
+        nextYearDayIncome = [int( sum(incomes) / len(incomes) )]
+        print(nextYearDayIncome)
+        # for income in incomes:
+        #     print(income)
+        #     nextYearDayIncome = income
     return incomeHistory
     # return nextYearIncome
 
