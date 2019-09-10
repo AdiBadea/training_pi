@@ -44,6 +44,7 @@ def findLastYear(input):
     lastYear = max(years)
     return lastYear
 
+#In viitor, de reviziuit functia asta ptr imbunatatiri
 def calculateNextYearIncome(incomeHistory):
     nextYearIncome = []
     for dayIncomes in incomeHistory:
@@ -59,22 +60,20 @@ def calculateNextYearIncome(incomeHistory):
         #Schimb numele cheii
         dayIncomes["income"] = dayIncomes.pop("incomes")
         nextYearIncome.append(dayIncomes)
-    print(nextYearIncome)
     return nextYearIncome
 
-
+def addYearToDates(nextYearIncome, year):
+    nextYearData = []
+    for dataPerDay in nextYearIncome:
+        dataPerDay["day"] = dataPerDay["day"] + "." + str(year) 
+        nextYearData.append(dataPerDay)
+    print(nextYearData)
+    return nextYearData
+    
 # Main program ---
 
 data = getData("data.csv")
 nextYear = findLastYear(data) + 1
 incomeHistory = buildDictionary(data)
 nextYearIncome = calculateNextYearIncome(incomeHistory)
-
-
-# [
-#     {"zi": "01.01", "sume": [1000, 500, 700]}
-# ]
-
-#np.unique - ptr a obtine zilele
-#dupa ce a mzilele, ma duc iara pe dates
-#
+nextYearData = addYearToDates(nextYearIncome, nextYear)
