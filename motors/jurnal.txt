@@ -1,4 +1,6 @@
 15 Septembrie 2019
 - Pinul 8 porneste odata cu Pi-ul, nu imi pot explica de ce...
+    -Pinul 8 este un PIN TXD, acesta porneste on by default
 - Pinul 10 porneste odata cu Pi-ul, nu imi pot explica de ce...
+    -Pinul 10 este un PIN RXD, acesta porneste on by default
 - De tinut minte, nu poti conecta un ground la alt ground, de intrebat pe Ionut de ce
