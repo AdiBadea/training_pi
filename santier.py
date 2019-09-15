@@ -14,8 +14,9 @@ GPIO.setup(7, GPIO.OUT)
 for repetitions in range(0, 10):
     
     GPIO.output(7, True)
-    time.sleep(2)
+    time.sleep(1)
     GPIO.output(7, False)
- 
+    time.sleep(1)
+
     
 GPIO.cleanup()
