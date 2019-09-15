@@ -1,6 +1,8 @@
 import RPi.GPIO as GPIO
 import time
 
+GPIO.setwarnings(false)
+
 # Setam modul de numerotare al pinilor
 GPIO.setmode(GPIO.BOARD)
 
