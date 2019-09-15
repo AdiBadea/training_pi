@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 
+#Dezzactivez avertizarile
 GPIO.setwarnings(False)
 
 # Setam modul de numerotare al pinilor
