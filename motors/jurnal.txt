@@ -5,4 +5,4 @@
     -Pinul 10 este un PIN RXD, acesta porneste on by default
 - De tinut minte, nu poti conecta un ground la alt ground, de intrebat pe Ionut de ce
 -Am creat un dispozitiv de reglare a motoarelor si ap rogramului ce nu consuma baterie si 
-nu roade motoarele, de dezvoltat pe el in curand.
+nu roade motoarele, de dezvoltat pe el in curand.11
