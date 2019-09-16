@@ -36,7 +36,6 @@ def scrapeEmag(link):
     scrapeResult["seller"] = "eMAG"
     scrapeResult["scrapeDate"] = str(generateDateToday())
 
-
-    print(scrapeResult)
+    return scrapeResult
 
 
