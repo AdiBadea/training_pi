@@ -3,6 +3,9 @@ import urllib.request
 import time
 from bs4 import BeautifulSoup
 
+# Importing Functions
+from functions.generateDateToday import generateDateToday
+
 def scrapeEmag(link):
 
     scrapeResult = {"scrapeDate": "", "seller": "", "title": "", "price": ""}
@@ -31,6 +34,7 @@ def scrapeEmag(link):
     scrapeResult["title"] = titleValue
     scrapeResult["price"] = priceValue
     scrapeResult["seller"] = "eMAG"
+    scrapeResult["scrapeDate"] = str(generateDateToday())
 
 
     print(scrapeResult)
