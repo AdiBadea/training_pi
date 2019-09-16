@@ -1,8 +1,8 @@
 # Importing Deppendencies
-import requests
-import urllib.request
-import time
-from bs4 import BeautifulSoup
+# import requests
+# import urllib.request
+# import time
+# from bs4 import BeautifulSoup
 
 # Importing WebScrappers
 from webscrappers.emag_scrapper import scrapeEmag

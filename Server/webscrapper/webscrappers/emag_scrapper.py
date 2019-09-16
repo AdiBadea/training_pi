@@ -1,10 +1,12 @@
-# Import libraries
-# import requests
-# import urllib.request
-# import time
-# from bs4 import BeautifulSoup
+import requests
+import urllib.request
+import time
+from bs4 import BeautifulSoup
 
 def scrapeEmag(link):
+
+    scrapeResult = {"scrapeDate": "", "seller": "", "title": "", "price": ""}
+
     # Set the URL you want to webscrape from
     url = link
     # Connect to the URL
@@ -26,11 +28,11 @@ def scrapeEmag(link):
     # Delete whitespaces
     priceValue = priceValue.strip()
 
-    print(titleValue)
-    print(priceValue)
+    scrapeResult["title"] = titleValue
+    scrapeResult["price"] = priceValue
+    scrapeResult["seller"] = "eMAG"
 
-# link = "https://www.emag.ro/telefon-mobil-samsung-galaxy-note-10-plus-dual-sim-256gb-12gb-ram-4g-aura-glow-sm-n975fzsdrom/pd/DGXRJ5BBM/?ref=fam#Aura-Glow"
 
-# scrapeEmag(link)
+    print(scrapeResult)
 
 
