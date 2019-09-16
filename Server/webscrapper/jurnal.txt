@@ -9,3 +9,5 @@ https://towardsdatascience.com/how-to-web-scrape-with-python-in-4-minutes-bc4918
 - Am reusit sa extrag pretul de pe emag folosind "contents"
 - Am implementat functia ce genereaza data scrapeului
 - Am configurat datele pe Python anywhere dar sunt blocat de emag, trebuie sa trimit un header.
+- Am configurat un task scheduler pe windows la minutes
+- Din pacate eroarea de 403 pe care o primeam era de la PythonAnywhere, conturile free sunt foarte limitate cand vine vorba de webscrapping
