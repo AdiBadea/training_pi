@@ -6,3 +6,4 @@ https://towardsdatascience.com/how-to-web-scrape-with-python-in-4-minutes-bc4918
 - Caut metode de a lucra cu ceea ce im ireturneaza requestul.
 - Emag returneaza un HTML
 - Am reusit sa iau paragraful cu pretul de pe Emag, dar din pacate nu reusiesc inca sa iau innervalue ptr HTML
+- Am reusit sa extrag pretul de pe emag folosind "contents"
