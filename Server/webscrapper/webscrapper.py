@@ -17,9 +17,9 @@ soup = BeautifulSoup(response.text, "html.parser")
 
 priceHTMLTag = soup.find(class_="product-new-price")
 
-priveValue = priceHTMLTag.contents[0]
-priveValue = priveValue.strip()
+priceValue = priceHTMLTag.contents[0]
+priceValue = priceValue.strip()
 
-print(priveValue)
+print(priceValue)
 
 
