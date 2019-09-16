@@ -15,9 +15,13 @@ response = requests.get(url)
 # Parse HTML and save to BeautifulSoup object
 soup = BeautifulSoup(response.text, "html.parser")
 
+# Get the HTML tag containing the price
 priceHTMLTag = soup.find(class_="product-new-price")
 
+# Extract only the price from the HTML Tag
 priceValue = priceHTMLTag.contents[0]
+
+# Delete whitespaces
 priceValue = priceValue.strip()
 
 print(priceValue)
