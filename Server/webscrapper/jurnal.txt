@@ -1,0 +1,7 @@
+16 Septembrie 2019
+- De facut un proiect webscrapper care sa ia preturile de la diverse site-uri pentru anumite tipuri de produse
+- Am folosit un tutorial de pe medium.com dar fara mare succes deoarece in exemplu url-ul lui
+returneaza direct un HTML pe care il putem parsa in cazul meu returneaza obiect.
+https://towardsdatascience.com/how-to-web-scrape-with-python-in-4-minutes-bc49186a8460
+- Caut metode de a lucra cu ceea ce im ireturneaza requestul.
+- Emag returneaza un HTML
