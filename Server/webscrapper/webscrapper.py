@@ -17,13 +17,9 @@ soup = BeautifulSoup(response.text, "html.parser")
 
 priceHTMLTag = soup.find(class_="product-new-price")
 
-print(priceHTMLTag)
+priveValue = priceHTMLTag.contents[0]
+priveValue = priveValue.strip()
 
-
-# print(soup.p)
-# found = soup.find_all('p')
-# print(found[0].encode_contents())
-# print(type(found[1].encode_contents()))
-
+print(priveValue)
 
 
