@@ -13,13 +13,13 @@ class Neuron:
 
     # Feedforward = Aa introduce input-urile in neuron
     def feedforward(self, inputs):
-        result = np.dot(weights, inputs) + bias
+        result = np.dot(self.weights, inputs) + self.bias
         return sigmoid(result)
 
 # ------------------------------------------------------
 
 weights = np.array([1,1])
-bias = 4
+bias = 1
 
 neuron = Neuron(weights, bias)
 
