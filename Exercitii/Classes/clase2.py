@@ -11,7 +11,7 @@ class Pat:
 plt.plot([3], [1], marker='o', markersize=3, color="red")
 
 class plotDots:
-    def__init__(coordsX, coordsY):
+    def __init__(coordsX, coordsY):
         plt.plot(coordsX, coordsY, marker='o', markersize=3, color="blue")
         plt.show()
 
