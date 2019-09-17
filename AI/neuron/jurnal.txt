@@ -1,3 +1,4 @@
 17 Septembrie 2019
 - Am inceput sa lucrez la proiect, sunt cu mult ramas in urma dar se pare ca faptul ca am mai
 exersat python imi permite acum sa inteleg mai rpd codul.
+- Am creeat neuronul cu succes
