@@ -1,12 +1,22 @@
-class ClasaMea:
-    def __init__(self, text = "Nimic"):
-        self.text = text
-        print("In constructor:", text)
+class Calculation:
+    def __init__(self, inputNumber = 0):
+        self.inputNumber = inputNumber
     
-    def printHello(self):
-        # print("In fucntia printHello:", text)
-        print("Self.text in print hello", self.text)
+    def add1(self):
+        self.inputNumber = self.inputNumber + 1
+        return self.inputNumber
+    
+    def addNumber(self, number):
+        result = self.inputNumber + number
+        return result
 
-x = ClasaMea(text = "ceva")
+myNumber = Calculation(5)
 
-x.printHello()
+test1 =   myNumber.add1()
+myNumber = Calculation(test1)
+test1 = myNumber.add1()
+print(test1)
+
+
+test2 = myNumber.addNumber(2)
+print(test2)
