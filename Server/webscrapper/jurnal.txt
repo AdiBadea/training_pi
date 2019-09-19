@@ -11,3 +11,8 @@ https://towardsdatascience.com/how-to-web-scrape-with-python-in-4-minutes-bc4918
 - Am configurat datele pe Python anywhere dar sunt blocat de emag, trebuie sa trimit un header.
 - Am configurat un task scheduler pe windows la minutes
 - Din pacate eroarea de 403 pe care o primeam era de la PythonAnywhere, conturile free sunt foarte limitate cand vine vorba de webscrapping
+
+19 Septembrie 2019
+- Am incercat sa creez o functie care sa copieze output-ul intr-un alt folder pe drive pentru a putea share-ui cu Florin,
+acesta este un workaround pana cand implementez un sistem de notificare.
+- Voi scrie direct in drive, asta pana cand reusesc sa copiez un fisier dintr-un folder in altul.

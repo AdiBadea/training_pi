@@ -1,7 +1,8 @@
 import csv
 import os.path
 
-outputFolder = "C:/Users/AdrianBadea/Projects/training_pi/Server/webscrapper/webscrappers/ouput"
+# outputFolder = "C:/Users/AdrianBadea/Projects/training_pi/Server/webscrapper/webscrappers/ouput"
+outputFolder = "C:/Users/AdrianBadea/GoogleDrive/Webscrapper_output"
 fileName = "webscrape_history.csv"
 completeName = os.path.join(outputFolder, fileName)
 
