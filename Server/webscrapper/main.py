@@ -5,6 +5,7 @@ from webscrappers.emag_scrapper import scrapeEmag
 
 # Importing Functions
 from functions.writeCsv import writeCsv
+from functions.copyToDrive import copyToDrive
 
 emagLinks = [
     "https://www.emag.ro/casti-apple-airpods-2-white-mv7n2zm-a/pd/DQ8L5ZBBM/?ref=others_also_viewed_1_4&provider=rec-go&recid=rec_golang_43_cd01f53588102f44b88d86578bcb33e2_1568638750&scenario_ID=43",
@@ -18,3 +19,5 @@ for emagLink  in emagLinks:
     emagScrape = scrapeEmag(emagLink)
     writeCsv(emagScrape)
     time.sleep(5)
+
+copyToDrive()
